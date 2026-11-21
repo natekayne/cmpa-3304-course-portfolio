@@ -1,0 +1,172 @@
+
+/* CSS Variables for my custom buttons */
+:root {
+    --power-purple: #6D28D9;
+    --power-hover: #7C3AED;
+    --morph-teal: #0F766E;
+    --quest-orange: #C2410C;
+    --quest-hover: #9A3412;
+    --level-blue: #2D304B;
+    --level-yellow: #FCD92D;
+}
+
+/* Original template styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    line-height: 2;
+    background-color: #fafafa;
+    color: #1F2937;
+    padding: 32px 16px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 1em;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #6B7280;
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.button-section {
+    padding: 32px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.button-section p {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+button {
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+/* Button 01: Color Fade - Professor's Example */
+.button-01 {
+    background-color: #0066CC;
+    color: #ffffff;
+    padding: 16px 32px;
+    border: 2px solid #0066CC;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.button-01:hover {
+    background-color: #ffffff;
+    color: #0066CC;
+    border-color: #0066CC;
+}
+
+/* Button 02: Lift and Shadow - Professor's Example */
+.button-02 {
+    background-color: #0e6027;
+    color: #ffffff;
+    padding: 16px 32px;
+    border: 2px solid #0e6027;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-02:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Button 03: Scale and Glow */
+.button-03 {
+    background-color: var(--power-purple);
+    color: #ffffff;
+    padding: 16px 32px;
+    border: 2px solid var(--power-purple);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.button-03:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(109, 40, 217, 0.5);
+    background-color: var(--power-hover);
+}
+
+/* Button 04: Border Morph */
+.button-04 {
+    background-color: #ffffff;
+    color: var(--morph-teal);
+    padding: 16px 32px;
+    border: 2px solid var(--morph-teal);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+}
+
+.button-04:hover {
+    background-color: var(--morph-teal);
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+/* Button 05: Slide Right */
+.button-05 {
+    background-color: var(--quest-orange);
+    color: #ffffff;
+    padding: 16px 32px;
+    border: 2px solid var(--quest-orange);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button-05:hover {
+    transform: translateX(10px);
+    background-color: var(--quest-hover);
+}
+
+/* Button 06: Text Stretch */
+.button-06 {
+    background-color: var(--level-blue);
+    color: #ffffff;
+    padding: 16px 32px;
+    border: 2px solid var(--level-blue);
+    letter-spacing: 0;
+    transition: letter-spacing 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.button-06:hover {
+    letter-spacing: 3px;
+    background-color: var(--level-yellow);
+    color: #000000;
+    border-color: var(--level-yellow);
+}
+
+/* Extra: Visible keyboard focus for accessibility */
+button:focus-visible {
+    outline: 3px solid #111827;
+    outline-offset: 4px;
+}
