@@ -1,0 +1,583 @@
+
+/* ==================================
+   Project 01: Personal Landing Page
+   Nathan Johnson
+   CMPA 3304 - Web Design
+   ================================== */
+
+/* My Color Palette */
+:root {
+    --background: #0C0C0F;
+    --section-background: #16121C;
+    --card-background: #231B2B;
+    --card-hover: #4B2D63;
+
+    --accent: #C62828;
+    --accent-hover: #991B1B;
+    --accent-light: #FF5252;
+
+    --text: #FFFFFF;
+    --muted: #D9D2DD;
+    --border: #594752;
+}
+
+/* Reset Default Browser Spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Main Page Styling */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Keeps the Main Content Flexible */
+main {
+    flex: 1;
+}
+
+/* Centers Our Content */
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* Basic Link Colors */
+a {
+    color: var(--accent-light);
+}
+
+/* ==================================
+   Header and Navigation
+   ================================== */
+
+/* Header Border */
+.site-header {
+    border-bottom: 1px solid var(--border);
+}
+
+/* Flexbox Header Layout */
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 0;
+}
+
+/* My Name */
+.brand h1 {
+    font-size: 24px;
+    line-height: 1.2;
+    color: var(--text);
+}
+
+/* Student Subtitle */
+.brand p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* Navigation Layout */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Navigation Links */
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 16px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+
+    transition: color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* Navigation Hover Effect */
+nav a:hover {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+}
+
+
+/* ==================================
+   About Me Section
+   ================================== */
+
+/* Flexbox Layout for About Me */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Main Introduction */
+.hero-text {
+    flex: 2;
+    min-width: 0;
+}
+
+/* Small Text Above the Heading */
+.eyebrow {
+    color: var(--accent-light);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Main Introduction Heading */
+.hero h2 {
+    color: var(--text);
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 12px 0 20px;
+}
+
+/* Introduction Paragraphs */
+.hero-text p {
+    margin-bottom: 18px;
+}
+
+/* Currently Learning Card */
+.hero-note {
+    flex: 1;
+    min-width: 0;
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+}
+
+/* Card Heading */
+.hero-note h3 {
+    color: var(--text);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+/* Card Paragraph */
+.hero-note p {
+    color: var(--muted);
+}
+
+/* See My Projects Button */
+.button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 12px 24px;
+    margin-top: 12px;
+    border-radius: 8px;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ==================================
+   General Section Styling
+   ================================== */
+
+/* Spacing for Main Sections */
+.section {
+    padding: 70px 0;
+}
+
+/* Alternate Section Background */
+.section-alt {
+    background-color: var(--section-background);
+}
+
+/* Section Headings */
+.section h2 {
+    color: var(--text);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Small Introduction Under Headings */
+.section-intro {
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+/* ==================================
+   Skills and Interests
+   ================================== */
+
+/* Flexbox Layout for Skill Cards */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual Skill Cards */
+.skill-card {
+    flex: 1 1 230px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* Skill Card Headings */
+.skill-card h3 {
+    color: var(--text);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+/* Skill Card Paragraphs */
+.skill-card p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* Interactive Hover Effect */
+.skill-card:hover {
+    background-color: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+
+/* ==================================
+   Featured Projects
+   ================================== */
+
+/* Flexbox Layout for Projects */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual Project Cards */
+.project-card {
+    flex: 1 1 250px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+
+    /* Keeps each card's link near the bottom */
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Featured Work Labels */
+.project-number {
+    color: var(--accent-light);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Project Titles */
+.project-card h3 {
+    color: var(--text);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+/* Project Descriptions */
+.project-card p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* Keep Featured Work Labels Red */
+.project-card .project-number {
+    color: var(--accent-light);
+}
+
+/* View Project Links */
+.project-link {
+    display: inline-block;
+    align-self: flex-start;
+    color: var(--accent-light);
+    font-weight: bold;
+    text-decoration: none;
+
+    margin-top: auto;
+    padding-top: 20px;
+    padding-bottom: 4px;
+
+    border-bottom: 2px solid transparent;
+
+    transition: color 0.3s ease,
+                border-color 0.3s ease,
+                letter-spacing 0.3s ease;
+}
+
+/* Interactive Project Card Hover */
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Interactive Project Link Hover */
+.project-link:hover {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+    letter-spacing: 0.5px;
+}
+
+
+/* ==================================
+   Contact and Footer
+   ================================== */
+
+/* Main Footer Background */
+.site-footer {
+    background-color: var(--section-background);
+    border-top: 1px solid var(--border);
+    padding: 48px 0;
+}
+
+/* Flexbox Footer Layout */
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+}
+
+/* Contact Content */
+.footer-content {
+    max-width: 620px;
+}
+
+/* Contact Heading */
+.site-footer h2 {
+    color: var(--text);
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+/* Footer Paragraphs */
+.site-footer p {
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+
+/* GitHub and Email Links */
+.site-footer a {
+    display: inline-block;
+    color: var(--accent-light);
+    font-weight: bold;
+    text-decoration: none;
+
+    margin-right: 20px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--accent);
+
+    transition: color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* Footer Link Hover Effects */
+.site-footer a:hover {
+    color: var(--text);
+    border-bottom-color: var(--accent-light);
+}
+
+/* Copyright */
+.copyright {
+    color: var(--muted);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+
+/* ==================================
+   Responsive Design
+   ================================== */
+
+/* Tablets and Smaller Screens */
+@media (max-width: 760px) {
+
+    /* Stack Header and Navigation */
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    /* Give Navigation Room to Wrap */
+    nav {
+        width: 100%;
+        gap: 16px;
+    }
+
+    /* Stack About Me and Currently Learning */
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    /* Make Heading Fit Smaller Screens */
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    /* Keep Currently Learning Card Full Width */
+    .hero-note {
+        width: 100%;
+    }
+
+    /* Stack Skills Cards */
+    .skill-card {
+        flex: 1 1 100%;
+    }
+
+    /* Stack Featured Project Cards */
+    .project-card {
+        flex: 1 1 100%;
+    }
+
+    /* Reduce Section Spacing */
+    .section {
+        padding: 50px 0;
+    }
+
+    /* Stack Contact and Copyright */
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    /* Allow Copyright Text to Wrap */
+    .copyright {
+        white-space: normal;
+    }
+}
+
+/* Extra Small Phone Screens */
+@media (max-width: 420px) {
+
+    /* Smaller Navigation Spacing */
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    /* Smaller Main Heading */
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    /* Smaller Section Headings */
+    .section h2 {
+        font-size: 28px;
+    }
+
+    /* Slightly Smaller Card Padding */
+    .skill-card,
+    .project-card {
+        padding: 20px;
+    }
+
+    /* Keep Footer Links Organized */
+    .site-footer a {
+        margin-right: 12px;
+    }
+}
+
+
+/* ==================================
+   Extra 1: Keyboard Accessibility
+   ================================== */
+
+/* Makes links easier to see when using Tab */
+a:focus-visible {
+    outline: 3px solid var(--accent-light);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+
+/* ==================================
+   Extra 2: Reduced Motion
+   ================================== */
+
+/* Respects the user's reduced-motion setting */
+@media (prefers-reduced-motion: reduce) {
+
+    /* Disable smooth scrolling */
+    html {
+        scroll-behavior: auto;
+    }
+
+    /* Remove animated transitions */
+    nav a,
+    .button,
+    .skill-card,
+    .project-card,
+    .project-link,
+    .site-footer a {
+        transition: none;
+    }
+
+    /* Remove movement on hover */
+    .button:hover,
+    .skill-card:hover,
+    .project-card:hover {
+        transform: none;
+    }
+}
