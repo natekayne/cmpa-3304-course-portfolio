@@ -1,50 +1,66 @@
+/* My Color Palette */
+
+:root {
+  --background: #0C0C0F;
+  --section-background: #16121C;
+  --card-background: #231B2B;
+  --card-hover: #4B2D63;
+  --accent: #C62828;
+  --accent-hover: #991B1B;
+  --accent-light: #FF5252;
+  --text: #FFFFFF;
+  --muted: #D9D2DD;
+  --border: #594752;
+}
+
+/* Reset Default Browser Spacing */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Main Page Styling */
+
 body {
-  font-family: "Times New Roman", serif;
+  font-family: "Trebuchet MS", Arial, sans-serif;
   font-size: 16px;
-  line-height: 2;
-  color: #111111;
-  background-color: #ffffff;
+  line-height: 1.8;
+  color: var(--text);
+  background-color: var(--background);
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
-  padding: 32px 0;
 }
 
 main {
   max-width: 800px;
   width: 100%;
-  padding: 0 16px;
+  padding: 32px 24px;
 }
 
 h1 {
-  font-size: 3.75rem;
-  font-weight: normal;
-  line-height: 1em;
-  letter-spacing: -0.25rem;
+  font-size: 2.75rem;
+  line-height: 1.2;
   text-align: center;
   margin-bottom: 24px;
-  padding-bottom: 48px;
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  padding-bottom: 24px;
+  border-bottom: 3px solid var(--accent);
 }
 
 h2 {
   font-size: 24px;
-  font-weight: normal;
   margin-top: 32px;
   margin-bottom: 16px;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  border-bottom: 1px solid var(--border);
 }
 
 p {
   margin-bottom: 16px;
+  color: var(--muted);
 }
 
 ul {
@@ -57,26 +73,30 @@ li {
 }
 
 a {
-  color: #0066CC;
+  color: var(--accent-light);
   text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #004499;
+  color: var(--text);
 }
 
 code {
   font-family: monospace;
-  background-color: #f5f5f5;
+  background-color: var(--card-background);
+  color: var(--text);
   padding: 2px 6px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
+/* Navigation 01: Simple Vertical List */
+
 .nav-simple {
-  position: fixed;
-  left: 32px;
-  top: 32px;
-  width: 200px;
+  width: 100%;
+  max-width: 800px;
+  padding: 16px;
 }
 
 .nav-simple ul {
@@ -91,32 +111,28 @@ code {
 
 .nav-simple a {
   display: block;
-  padding: 8px 16px;
-  color: #0066CC;
+  padding: 12px 20px;
+  color: var(--text);
   text-decoration: none;
-  background-color: #fafafa;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--card-background);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease;
 }
 
 .nav-simple a:hover {
-  background-color: #0066CC;
-  color: #ffffff;
+  background-color: var(--accent);
+  border-color: var(--accent-light);
 }
 
-.nav-simple+main {
-  margin-left: 232px;
-}
+/* Navigation 02: Horizontal Flexbox */
 
 .nav-horizontal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #333333;
+  width: 100%;
+  background-color: var(--card-background);
   padding: 0 32px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  border-bottom: 3px solid var(--accent);
 }
 
 .nav-horizontal ul {
@@ -124,6 +140,7 @@ code {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 32px;
 }
 
@@ -134,29 +151,152 @@ code {
 .nav-horizontal a {
   display: block;
   padding: 16px 0;
-  color: #ffffff;
+  color: var(--text);
   text-decoration: none;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .nav-horizontal a:hover {
-  color: #0066CC;
+  color: var(--accent-light);
 }
 
-.nav-horizontal+main {
-  margin-top: 80px;
+/* Navigation 03: My Custom Centered Navigation */
+
+.nav-custom {
+  width: 100%;
+  background-color: var(--card-background);
+  padding: 8px 16px;
 }
 
-.nav-custom {}
+.nav-custom ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
 
-.nav-custom ul {}
+.nav-custom li {
+  margin-bottom: 0;
+}
 
-.nav-custom li {}
+.nav-custom a {
+  display: block;
+  padding: 12px 20px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease,
+              color 0.3s ease;
+}
 
-.nav-custom a {}
+.nav-custom a:hover {
+  color: var(--accent-light);
+  border-bottom-color: var(--accent);
+}
 
-.nav-custom a:hover {}
+/* Navigation 04: Justified Navigation */
 
-@media (width >=480px) {}
+.nav-justified {
+  width: 100%;
+  background-color: var(--card-background);
+  padding: 16px 24px;
+}
 
-@media (width >=1024px) {}
+.nav-justified ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-justified li {
+  margin-bottom: 0;
+}
+
+.nav-justified a {
+  display: block;
+  padding: 12px 24px;
+  color: var(--text);
+  background-color: var(--background);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.nav-justified a:hover {
+  background-color: var(--accent);
+  border-color: var(--accent-light);
+}
+
+/* Current Page Indicator */
+
+nav a.current {
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Keyboard Accessibility */
+
+a:focus-visible {
+  outline: 3px solid var(--accent-light);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Mobile Layout */
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .nav-horizontal ul,
+  .nav-custom ul {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-justified li {
+    flex: 1 1 40%;
+    text-align: center;
+  }
+}
+
+/* Desktop Layout */
+
+@media (min-width: 1024px) {
+  .nav-simple {
+    position: fixed;
+    left: 32px;
+    top: 32px;
+    width: 200px;
+    padding: 0;
+  }
+
+  .nav-simple + main {
+    margin-left: 232px;
+    width: calc(100% - 264px);
+  }
+}
+
+/* Reduced Motion Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
+
+  nav a {
+    transition: none;
+  }
+}

@@ -5,38 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navigation Lab - Gallery</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-  <nav class="nav-simple">
+  <nav class="nav-justified">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Gallery</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../projects/index.html">Projects</a></li>
+      <li><a href="index.html" class="current" aria-current="page">Gallery</a></li>
     </ul>
   </nav>
 
   <main>
     <h1>Gallery</h1>
 
-    <p>This page uses the simple vertical navigation pattern, just like the About page. You can experiment with applying
-      different navigation classes to see how they look.</p>
+    <p>For this page, I wanted to try something different and spread the navigation buttons across the screen.
+      I used Flexbox and space-between to give each link its own space.</p>
 
     <h2>Experimenting with Navigation</h2>
 
-    <p>Try changing the class on this page's <code>&lt;nav&gt;</code> element to see different styles:</p>
+    <p>I experimented with four different navigation styles throughout this website:</p>
 
     <ul>
-      <li><strong>class="nav-simple"</strong> - vertical list (current)</li>
-      <li><strong>class="nav-horizontal"</strong> - horizontal dark bar</li>
-      <li><strong>class="nav-custom"</strong> - your own creation</li>
+      <li><strong>class="nav-simple"</strong> - vertical list</li>
+      <li><strong>class="nav-horizontal"</strong> - horizontal navigation bar</li>
+      <li><strong>class="nav-custom"</strong> - centered navigation</li>
+      <li><strong>class="nav-justified"</strong> - justified navigation (current)</li>
     </ul>
 
-    <p>Remember: all pages share the same <strong>style.css</strong> file, so changes to navigation classes in the CSS
-      will affect every page that uses that class.</p>
+    <p>One thing I really like about using a shared stylesheet is that I can keep my colors, fonts, and hover
+      effects consistent without having to style every page separately. I also kept the same dark purple
+      and red theme from my Personal Landing Page.</p>
   </main>
 
 </body>
